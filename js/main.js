@@ -1,8 +1,11 @@
 $(function() {
+	var gui = require('nw.gui');
+
 	var $body = $('body'),
 		$galeria = $("#galeria"),
 		$3er = $("a[href='main']"),
-		$ulsa = $("a[href='ulsa']");
+		$ulsa = $("a[href='ulsa']"),
+		btnCerrar = $("#cerrar");
 
 	var backgrounds = [
     		{ src: 'imgs/bkg-1-sm.jpg', valign: 'bottom' },
@@ -13,6 +16,11 @@ $(function() {
     		home: "https://www.ulsavictoria.edu.mx/ComunicadoUlsa/",
     		ulsa: "http://www.ulsavictoria.edu.mx/"
     	};
+
+
+	btnCerrar.on('click',function(){
+		gui.App.quit();
+	});
 
     $3er.on('click',function(ev){
     	ev.preventDefault();
@@ -37,10 +45,4 @@ $(function() {
 			photoset: '72157688310223665'
 		});
 
-
-
-
 });
-
-
-
